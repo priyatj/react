@@ -13,9 +13,17 @@ const Login = ({ onSend }) => {
 
   return (
     <div>
+        Username:
         <input
         type="text"
         data-testid="nameText"
+        value={inputText}
+        onChange={handleTextChange}
+      />
+      Password:
+      <input
+        type="text"
+        data-testid="passwordText"
         value={inputText}
         onChange={handleTextChange}
       />
@@ -23,7 +31,7 @@ const Login = ({ onSend }) => {
         data-testid="sendButton"
         onClick={handleSend}
       >
-        Send
+        Login
       </button>
     </div>
   );

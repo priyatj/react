@@ -21,7 +21,13 @@ describe('<LoginForm />', () => {
         getByTestId('nameText'),
         {
           target: {
-            value: 'New message',
+            value: 'New name',
+          },
+        },
+        getByTestId('passwordText'),
+        {
+          target: {
+            value: 'password',
           },
         },
       );
@@ -31,10 +37,12 @@ describe('<LoginForm />', () => {
 
     it('clears the text field', () => {
       expect(getByTestId('nameText').value).toEqual('');
+      expect(getByTestId('passwordText').value).toEqual('');
     });
 
     it('calls the send handler', () => {
-        expect(sendHandler).toHaveBeenCalledWith('New message');
+        expect(sendHandler).toHaveBeenCalledWith('New name');
+        expect(sendHandler).toHaveBeenCalledWith('password');
     });
   });
 });
